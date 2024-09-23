@@ -64,7 +64,7 @@ app.get('/quiz', (req, res) => {
   // Endpoint para obter perguntas por nível de dificuldade
 app.get('/quiz/difficulty/:level', (req, res) => {
   const level = req.params.level;
-  const filteredQuestions = quiz.filter(q => q.difficulty === level);
+  const filteredQuestions = questions.filter(q => q.difficulty === level);
   
   if (filteredQuestions.length > 0) {
     res.json(filteredQuestions);
